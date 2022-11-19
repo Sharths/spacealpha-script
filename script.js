@@ -25,7 +25,6 @@ setInterval(function(){
             $("button:contains(Print)").click();
             return
         }
-        x = $("farmsqueue .clickable").text();
         if(!$("farmsqueue:contains('seconds'), farmsqueue:contains('minutes'), farmsqueue:contains('hours')").length && pla[pAtual].plant){
             $("farmsqueue .clickable").click();
         }
@@ -39,17 +38,13 @@ setInterval(function(){
             
             pTrain = pla[pAtual].train;
             if(pla[pAtual].tr === true){
-                $("#workers_div .td_icon[style*="+pTrain+"]").click();
-                setTimeout(function(){
-                    $("mat-tab-group button:contains('↑')").click();
-                    setTimeout(function(){
-                        $("mat-tab-group button:contains('TRAIN')").each(function(){
-                            if($(this).text() === "TRAIN"){
-                                this.click();
-                            }                
-                        });
-                    }, 2);
-                }, 2);
+                $("#workers_div .td_icon[style*="+pTrain+"]").click();                
+                $("mat-tab-group button:contains('↑')").click();
+                $("mat-tab-group button:contains('TRAIN')").each(function(){
+                    if($(this).text() === "TRAIN"){
+                        this.click();
+                    }                
+                 });
             }        
         }     
 }, 800)
