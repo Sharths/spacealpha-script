@@ -47,4 +47,4 @@ setInterval(function(){
                  });
             }        
         }     
-}, 1500)
+}, 15000)
